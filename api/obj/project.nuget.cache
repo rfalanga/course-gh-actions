@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6TvMvrN+C9c=",
+  "dgSpecHash": "j9NFgdtlER4=",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\course-gh-actions\\api\\api.csproj",
+  "projectFilePath": "C:\\GitHub\\course-gh-actions\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rodf\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\rodf\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.3\\microsoft.aspnetcore.openapi.8.0.3.nupkg.sha512",
@@ -20,7 +20,7 @@
     "C:\\Users\\rodf\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\rodf\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "C:\\Users\\rodf\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
-    "C:\\Users\\rodf\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
   ],
   "logs": []
 }
