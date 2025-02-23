@@ -12,6 +12,9 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+            - run: pwd && ls -la # check the current directory and list all files before
+            - uses: actions/checkout@v4
+            - run: pwd && ls -la # check the current directory and list all files after
             - run: go version # check the go version before
             - uses: actions/setup-go@v5
               with: # use this to pass parameters to the action
