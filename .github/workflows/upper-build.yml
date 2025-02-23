@@ -18,7 +18,8 @@ jobs:
             - run: go version # check the go version before
             - uses: actions/setup-go@v5
               with: # use this to pass parameters to the action
-                go-version: '1.22'
+                # go-version: '1.22'
+                go-version-file: ./upper/go.mod # this causes it to read that go.mod file
             - run: go version # check the go version after
             - run: |
                 ls
