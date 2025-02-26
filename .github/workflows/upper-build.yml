@@ -9,7 +9,7 @@ on:
     
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
 
         steps:
             - run: pwd && ls -la # check the current directory and list all files before
