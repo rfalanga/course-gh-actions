@@ -9,7 +9,7 @@ jobs:
   thanks:
     runs-on: ubuntu-latest
     permissions:
-      issues: write
+      issues: write  # This is write access to the repo for issues
     steps:
       - uses: actions/github-script@v7
         id: issue_script
