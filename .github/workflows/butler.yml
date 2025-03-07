@@ -2,7 +2,7 @@ name: butler
 
 on:
   issue_comment:
-    types: [created]
+    types: [created] # Someone comments on an issue
 
 permissions:
   pull-requests: write
