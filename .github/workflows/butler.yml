@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: ca-dp/code-butler@v1
-        with:
+        with: # Set the inputs
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} # I don't have an OPENAI_API_KEY secret
           cmd: chat
