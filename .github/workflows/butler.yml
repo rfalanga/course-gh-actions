@@ -8,11 +8,11 @@ permissions:
   pull-requests: write # This allows us to attach a comment to the PR, this is being applied to the workflow, not just a individual job
 
 jobs:
-  # log:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - run: echo 'comment ${{ github.event.comment.body }}'
-  #     - run: echo '${{ toJson(github.event) }}'
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'comment ${{ github.event.comment.body }}' # This will show the contents of comment
+      - run: echo '${{ toJson(github.event) }}' # This will show the whole event
   chat:
     if: contains(github.event.comment.body, '/chat')
     runs-on: ubuntu-latest
