@@ -5,7 +5,7 @@ on:
     types: [created] # Someone comments on an issue or PR
 
 permissions:
-  pull-requests: write
+  pull-requests: write # This allows us to attach a comment to the PR, this is being applied to the workflow, not just a individual job
 
 jobs:
   # log:
