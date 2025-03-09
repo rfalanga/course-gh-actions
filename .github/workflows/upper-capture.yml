@@ -9,7 +9,7 @@ on:
     
 jobs:
     build:
-        runs-on: macos-latest
+        runs-on: macos-latest # This builds using the macOS runner on GH
         defaults:
             run:
                 working-directory: upper # change the working directory to the upper directory, for all steps
