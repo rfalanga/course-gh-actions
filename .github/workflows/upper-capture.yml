@@ -8,29 +8,25 @@ on:
     workflow_dispatch: # manually trigger a workflow
     
 jobs:
-    build:
-        runs-on: macos-latest # This builds using the macOS runner on GH
-        defaults:
+    capture:
+      strategy:
+        matrix:
+          os: [ubuntu-latest, windows-latest, macos-latest] # This means it will run 3 times, once for each OS
+      runs-on: ${{ matrix.os }}
+      defaults:
             run:
                 working-directory: upper # change the working directory to the upper directory, for all steps
-
-        steps:
-            - run: pwd && ls -la # check the current directory and list all files before
-            - uses: actions/checkout@v4
-            - run: pwd && ls -la # check the current directory and list all files after
-            # - run: go version # check the go version before
-            - uses: actions/setup-go@v5
-              with: # use this to pass parameters to the action
-                go-version: '1.22'
-                # go-version-file: ./upper/go.mod # this causes it to read that go.mod file
-                cache-dependency-path: ./upper/go.sum # this causes it to cache the go.sum file
-            # - run: go mod download # download the dependencies
-            #   working-directory: upper # change the working directory to the upper directory
-            - run: ls
-            - run: go build
-            - run: ls
-            - run: go test -v
-            - uses: actions/upload-artifact@v4
-              with:
-                path: ./upper/upper
-                name: build
+      steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-go@v5
+          with: # use this to pass parameters to the action
+            go-version: '1.22'
+            cache-dependency-path: ./upper/go.sum # this causes it to cache the go.sum file
+        - run: ls
+        - run: go build
+        - run: ls
+        - run: go test -v
+        - uses: actions/upload-artifact@v4
+          with:
+            path: ./upper/upper
+            name: build
