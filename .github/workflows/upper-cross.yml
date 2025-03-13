@@ -9,10 +9,7 @@ on:
     
 jobs:
     cross:
-      strategy:
-        matrix:
-          os: [ubuntu-latest, windows-latest, macos-latest] # This means it will run 3 times, once for each OS
-      runs-on: ${{ matrix.os }}
+      runs-on: ubuntu-latest
       defaults:
             run:
                 working-directory: upper # change the working directory to the upper directory, for all steps
@@ -22,11 +19,8 @@ jobs:
           with: # use this to pass parameters to the action
             go-version: '1.22'
             cache-dependency-path: ./upper/go.sum # this causes it to cache the go.sum file
-        - run: ls
-        - run: go build
-        - run: ls
-        - run: go test -v
+        - run: ./build.xplat.sh
         - uses: actions/upload-artifact@v4
           with:
-            path: ./upper/upper*
-            name: "build-${{ matrix.os }}"
+            path: ./upper/bin/upper*
+            name: build
