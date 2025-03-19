@@ -3,8 +3,8 @@ name: cd-azure
 on:
   push:
     paths:
-      - ".github/workflows/cd-azure.yml"
-      - "api/**"
+      - ".github/workflows/cd-azure.yml" # only run this workflow on changes to this file
+      - "api/**"                         # only run this workflow on changes to the api directory
   workflow_dispatch: # manual
 
 jobs:
