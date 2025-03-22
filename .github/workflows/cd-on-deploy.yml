@@ -1,0 +1,17 @@
+name: cd-on-deploy
+
+on:
+    deployment: # trigger when a deployment is created
+
+jobs:
+    alerts:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Send a message to a Teams channel
+              uses: azure/teams-send-message@v1
+              with:
+                  webhook-url: ${{ secrets.TEAMS_WEBHOOK_URL }}
+                  message-title: "Deployment Alert"
+                  message-summary: "A deployment has been created"
+                  message-text: "A deployment has been created for ${{ github.repository }} at ${{ github.sha }}"
+                  message-theme-color: "0078D7"
