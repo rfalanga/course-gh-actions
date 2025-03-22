@@ -33,4 +33,6 @@ jobs:
             - run: echo " ${{ needs.generate.outputs.RANDOM_PASSWORD }}"
             - run: mysql --version
             - run: mysql -h mysqlserver -u root -p${{ needs.generate.outputs.RANDOM_PASSWORD }} -e "SHOW DATABASES;"
+            - run: echo "job.services= ${{ toJson(job.services)}}"
+            - run: echo "job.container= ${{ toJson(job.container)}}"
 
