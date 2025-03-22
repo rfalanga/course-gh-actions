@@ -25,9 +25,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
-      name: production
+      name: production # I need to create this environment in the GitHub UI
       url: ${{ steps.deploy.outputs.webapp-url }}
-    needs: build
+    needs: build # This step depends on the build job
     steps:
       - uses: azure/login@v2
         with:
