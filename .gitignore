@@ -61,6 +61,10 @@ obj/
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
+# Ignore obj and exe
+[Bb]in/
+[Oo]bj/
+
 # Go workspace file
 go.work
 
