@@ -11,8 +11,12 @@ jobs:
   log:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'comment ${{ github.event.comment.body }}' # This will show the contents of comment
-      - run: echo '${{ toJson(github.event) }}' # This will show the whole event
+      - run: echo "comment $COMMENT_BODY" # This will show the contents of comment
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+      - run: echo "$EVENT_JSON" # This will show the whole event
+        env:
+          EVENT_JSON: ${{ toJson(github.event) }}
   chat:
     if: contains(github.event.comment.body, '/chat')
     runs-on: ubuntu-latest
