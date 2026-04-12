@@ -70,3 +70,7 @@ go.work
 
 # End of https://www.toptal.com/developers/gitignore/api/go
 
+# A couple more files/folder to ignore
+.vs/
+api/api.csproj.user
+api/obj/Debug/net8.0/api.GlobalUsings.g.cs
